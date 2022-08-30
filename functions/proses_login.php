@@ -1,0 +1,26 @@
+<?php
+session_start();
+
+$user = $_POST['username'];
+$password = $_POST['password'];
+
+include 'koneksi.php';
+
+$query = "SELECT * FROM tb_login WHERE `username` = '$user' AND `password` = '$password';";
+
+$result = mysqli_query($con, $query);
+
+$row = mysqli_num_rows($result);
+
+if ($row > 0) {
+    $data = mysqli_fetch_assoc($result);
+
+    $_SESSION['username'] = $user;
+    $_SESSION['leveluser'] = $data['leveluser'];
+    header('Location: ../view/index.php');
+} else {
+    echo "<script>
+    alert('Login failed!');
+    location.href='../view/index.php';
+    </script>";
+}

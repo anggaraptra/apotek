@@ -1,0 +1,74 @@
+<!-- modal update obat -->
+    <div class="modal fade" id="modalUpdateObat" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Update Obat</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body mx-auto">
+                    <form action="../updates/proses_update_obat.php" method="POST">
+                        <table border='0' collspacing='0' collpadding='0' cellpadding='2' cellspacing='0'>
+                            <input type="hidden" name="idObat" value="<?= $row['idobat'] ?>">
+                            <tr>
+                                <td><label for="idSupplier">ID Supplier</label></td>
+                                <td>:</td>
+                                <td>
+                                    <?php
+                                    $query = "SELECT * FROM tb_supplier";
+                                    $result = mysqli_query($con, $query);
+                                    ?>
+                                    <select class="form-control" name="idSupplier" required id="idSupplier">
+                                        <option value=""></option>
+                                        <?php while ($data = mysqli_fetch_assoc($result)) : ?>
+                                            <option value="<?= $data['idsupplier'] ?>"><?= $data["idsupplier"] . " - " . $data['perusahaan'] ?></option>
+                                        <?php endwhile; ?>
+                                    </select>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td><label for="namaObat">Nama Obat</label></td>
+                                <td>:</td>
+                                <td><input type="text" class="form-control" id="namaObat" name="namaObat"></td>
+                            </tr>
+
+                            <tr>
+                                <td><label for="kategori">Kategori Obat</label></td>
+                                <td>:</td>
+                                <td> <input type="text" class="form-control" id="kategori" name="kategoriObat" value=""></td>
+                            </tr>
+
+                            <tr>
+                                <td><label for="hargaJual">Harga Jual</label></td>
+                                <td>:</td>
+                                <td> <input type="text" class="form-control" id="hargaJual" name="hargaJual" value=""></td>
+                            </tr>
+
+                            <tr>
+                                <td><label for="hargaBeli">Harga Beli</label></td>
+                                <td>:</td>
+                                <td> <input type="text" class="form-control" id="hargaBeli" name="hargaBeli" value=""></td>
+                            </tr>
+
+                            <tr>
+                                <td><label for="stokObat">Stok Obat</label></td>
+                                <td>:</td>
+                                <td> <input type="text" class="form-control" id="stokObat" name="stokObat" value=""></td>
+                            </tr>
+
+                            <tr>
+                                <td><label for="keterangan">Keterangan</label></td>
+                                <td>:</td>
+                                <td><textarea name="ket" class="form-control" id="keterangan" cols="30" rows="10"></textarea></td>
+                            </tr>
+                        </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Update</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
