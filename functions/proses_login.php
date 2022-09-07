@@ -17,10 +17,10 @@ if ($row > 0) {
 
     $_SESSION['username'] = $user;
     $_SESSION['leveluser'] = $data['leveluser'];
-    header('Location: ../view/index.php');
+    header('Location: ../index.php?page=dashboard');
 } else {
     echo "<script>
     alert('Login failed!');
-    location.href='../view/index.php';
+    location.href='../../login.php';
     </script>";
 }

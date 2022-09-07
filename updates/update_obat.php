@@ -1,4 +1,10 @@
 <?php
+session_start();
+if (!isset($_SESSION['username'])) {
+    header("Location: ../login.php");
+    exit;
+}
+
 require '../functions/koneksi.php';
 
 $id = $_GET['idobat'];
@@ -16,7 +22,9 @@ $obat = mysqli_fetch_assoc($query);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <title>Update Obat</title>
 </head>
@@ -26,7 +34,7 @@ $obat = mysqli_fetch_assoc($query);
     <!-- update obat -->
     <form action="../functions/update/proses_update_obat.php" method="POST">
         <table border='0' collspacing='0' collpadding='0' cellpadding='2' cellspacing='0'>
-            <input type="hidden" name="idObat" value="<?= $row['idobat'] ?>">
+            <input type="hidden" name="idObat" value="<?= $obat['idobat'] ?>">
             <tr>
                 <td><label for="idSupplier">ID Supplier</label></td>
                 <td></td>
@@ -62,19 +70,19 @@ $obat = mysqli_fetch_assoc($query);
             <tr>
                 <td><label for="hargaJual">Harga Jual</label></td>
                 <td></td>
-                <td> <input type="text" class="form-control" id="hargaJual" name="hargaJual" value="<?= $obat['hargajual']; ?>"></td>
+                <td> <input type="number" class="form-control" id="hargaJual" name="hargaJual" value="<?= $obat['hargajual']; ?>"></td>
             </tr>
 
             <tr>
                 <td><label for="hargaBeli">Harga Beli</label></td>
                 <td></td>
-                <td> <input type="text" class="form-control" id="hargaBeli" name="hargaBeli" value="<?= $obat['hargabeli'] ?>"></td>
+                <td> <input type="number" class="form-control" id="hargaBeli" name="hargaBeli" value="<?= $obat['hargabeli'] ?>"></td>
             </tr>
 
             <tr>
                 <td><label for="stokObat">Stok Obat</label></td>
                 <td></td>
-                <td> <input type="text" class="form-control" id="stokObat" name="stokObat" value="<?= $obat['stok_obat']; ?>"></td>
+                <td> <input type="number" class="form-control" id="stokObat" name="stokObat" value="<?= $obat['stok_obat']; ?>"></td>
             </tr>
 
             <tr>
