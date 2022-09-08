@@ -28,6 +28,6 @@ if (!$hasil) {
 } else {
     echo "<script>
         alert('Data transaksi berhasil diupdate!');
-        window.location='../../view/view_transaksi.php';
+        window.location='../../dashboard.php?page=transaksi';
     </script>";
 }

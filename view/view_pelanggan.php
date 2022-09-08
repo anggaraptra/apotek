@@ -1,9 +1,3 @@
-<?php
-if (!isset($_SESSION['username'])) {
-    header("Location: ../login.php");
-    exit;
-}
-?>
 <!-- list pelanggan -->
 <section id="listPelanggan">
     <div class="container my-5">
@@ -38,7 +32,7 @@ if (!isset($_SESSION['username'])) {
                         <td><?= $plngn['alamat'] ?></td>
                         <td><?= $plngn['telp'] ?></td>
                         <td><?= $plngn['usia'] ?></td>
-                        <td><img src='assets/img/fotoresep/$plngn[' buktifotoresep']' alt='' class='rounded' width='150px' height='200px'></td>
+                        <td><img src='assets/img/fotoresep/<?= $plngn['buktifotoresep'] ?>' alt='' class='rounded' width='150px' height='200px'></td>
                         <?php if ($_SESSION['leveluser'] === 'admin') { ?>
                             <td class='text-center'>
                                 <a class='btn btn-warning' href='updates/update_pelanggan.php?idpelanggan=<?= $plngn['idpelanggan'] ?>'>Update</a>

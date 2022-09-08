@@ -36,13 +36,13 @@ if ($fotoResep != "") {
         } else {
             echo "<script>
                 alert('Data berhasil ditambahkan');
-                window.location='../../view/view_pelanggan.php';
+                window.location='../../dashboard.php?page=pelanggan';
             </script>";
         }
     } else {
         echo "<script>
             alert('Ekstensi gambar yang boleh hanya jpg, png, jpeg');
-            window.location='proses_insert_pelanggan.php';
+            window.location='../../dashboard.php?page=pelanggan';
         </script>";
     }
 } else {
@@ -62,7 +62,7 @@ if ($fotoResep != "") {
     } else {
         echo "<script>
             alert('Data berhasil ditambahkan');
-            window.location='../../view/view_pelanggan.php';
+            window.location='../../dashboard.php?page=pelanggan';
         </script>";
     }
 }

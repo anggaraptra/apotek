@@ -1,7 +1,7 @@
 <?php
 error_reporting(0);
 
-switch ($_GET['page']) {
+switch (@$_GET['page']) {
     case "karyawan":
         include 'view/view_karyawan.php';
         break;
@@ -17,7 +17,7 @@ switch ($_GET['page']) {
     case "transaksi":
         include 'view/view_transaksi.php';
         break;
-    case "dashboard":
-        include 'view/dashboard.php';
+    default:
+        include 'view/home.php';
         break;
 }

@@ -10,7 +10,7 @@ if (!$hasil) {
     die("Gagal menghapus " . mysqli_error($con));
 } else {
     echo "<script>
-        alert('Data obat berhasil di hapus');
-        window.location='../../view/view_pelanggan.php';
+        alert('Data pelanggan berhasil di hapus');
+        window.location='../../dashboard.php?page=pelanggan';
     </script>";
 }

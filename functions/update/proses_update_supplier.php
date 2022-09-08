@@ -18,6 +18,6 @@ if (!$hasil) {
 } else {
     echo "<script>
         alert('Data supplier berhasil diupdate!');
-        window.location='../../view/view_supplier.php';
+        window.location='../../dashboard.php?page=supplier';
     </script>";
 }

@@ -19,6 +19,6 @@ if (!$result) {
 } else {
     echo "<script>
     alert('Data berhasil ditambahkan!');
-    document.location.href = '../../view/view_karyawan.php';
+    document.location.href = '../../dashboard.php?page=karyawan';
     </script>";
 }

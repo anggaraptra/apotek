@@ -11,6 +11,6 @@ if (!$hasil) {
 } else {
     echo "<script>
         alert('Data karyawan berhasil di hapus');
-        window.location='../../view/view_karyawan.php';
+        window.location='../../dashboard.php?page=karyawan';
     </script>";
 }

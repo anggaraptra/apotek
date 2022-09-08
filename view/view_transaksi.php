@@ -1,13 +1,7 @@
-<?php
-if (!isset($_SESSION['username'])) {
-    header("Location: ../login.php");
-    exit;
-}
-?>
 <!-- list transaksi -->
 <section id="transaksi">
     <div class="container my-5">
-        <h2>Transaksi</h2>
+        <h2>List Transaksi</h2>
 
         <?php if ($_SESSION['leveluser'] === 'admin') { ?>
             <a class="btn btn-primary mb-2" data-bs-toggle="modal" data-bs-target="#modalInsertTransaksi">Tambah Transaksi</a>
@@ -46,7 +40,7 @@ if (!isset($_SESSION['username'])) {
                         <?php if ($_SESSION['leveluser'] === 'admin') { ?>
                             <td class='text-center'>
                                 <a class='btn btn-warning' href='updates/update_transaksi.php?idtransaksi=<?= $trnksi['idtransaksi'] ?>'>Update</a>
-                                <a class='btn btn-danger' href='functions/delete/delete_pelanggan.php?idpelanggan=<?= $trnksi['idtransaksi'] ?>' onclick="return confirm('Yakin?')">Delete</a>
+                                <a class='btn btn-danger' href='functions/delete/delete_transaksi.php?idtransaksi=<?= $trnksi['idtransaksi'] ?>' onclick="return confirm('Yakin?')">Delete</a>
                             </td>
                         <?php } ?>
                     </tr>

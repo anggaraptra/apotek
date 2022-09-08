@@ -59,7 +59,7 @@ if ($fotoResep != "") {
     } else {
         echo "<script>
             alert('Data berhasil diubah');
-            window.location='../../view/view_pelanggan.php';
+            window.location='../../dashboard.php?page=pelanggan';
         </script>";
     }
 }

@@ -10,6 +10,8 @@
 
     <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
+    <link rel="stylesheet" href="assets/vendor/bootstrap-icons/bootstrap-icons.css">
+
     <title>Apotek</title>
 </head>
 

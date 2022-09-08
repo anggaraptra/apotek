@@ -11,6 +11,6 @@ if (!$hasil) {
 } else {
     echo "<script>
         alert('Data obat berhasil di hapus');
-        window.location='../../view/view_obat.php';
+        window.location='../../dashboard.php?page=obat';
     </script>";
 }
