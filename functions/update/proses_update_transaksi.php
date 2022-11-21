@@ -27,7 +27,6 @@ if (!$hasil) {
     die("Gagal mengedit data transaksi, " . mysqli_error($con, $hasil));
 } else {
     echo "<script>
-        alert('Data transaksi berhasil diupdate!');
         window.location='../../dashboard.php?page=transaksi';
     </script>";
 }

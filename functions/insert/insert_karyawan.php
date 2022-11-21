@@ -18,7 +18,6 @@ if (!$result) {
     die("Gagal memasukan data karyawan! " . mysqli_error($con));
 } else {
     echo "<script>
-    alert('Data berhasil ditambahkan!');
     document.location.href = '../../dashboard.php?page=karyawan';
     </script>";
 }

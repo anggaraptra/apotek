@@ -19,7 +19,6 @@ if (!$hasil) {
     die("Gagal mengedit data karyawan, " . mysqli_error($con, $hasil));
 } else {
     echo "<script>
-        alert('Data karyawan berhasil diupdate!');
         window.location='../../dashboard.php?page=karyawan';
     </script>";
 }

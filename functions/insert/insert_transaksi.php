@@ -26,7 +26,6 @@ if (!$result) {
     die("Gagal memasukan data transaksi!" . mysqli_error($con));
 } else {
     echo "<script>
-    alert('Data berhasil ditambahkan!');
     document.location.href = '../../dashboard.php?page=transaksi';
     </script>";
 }

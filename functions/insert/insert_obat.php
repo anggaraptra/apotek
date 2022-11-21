@@ -27,7 +27,6 @@ if (!$result) {
     die("Gagal memasukan data obat! " . mysqli_error($con));
 } else {
     echo "<script>
-    alert('Data berhasil ditambahkan!');
     document.location.href = '../../dashboard.php?page=obat';
     </script>";
 }

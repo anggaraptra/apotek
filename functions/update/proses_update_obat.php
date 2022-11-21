@@ -27,7 +27,6 @@ if (!$hasil) {
     die("Gagal mengedit data obat, " . mysqli_error($con, $hasil));
 } else {
     echo "<script>
-        alert('Data obat berhasil diupdate!');
         window.location='../../dashboard.php?page=obat';
     </script>";
 }

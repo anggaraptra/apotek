@@ -4,19 +4,17 @@ session_start();
 $user = $_POST['username'];
 $password = $_POST['password'];
 
-include 'koneksi.php';
+require 'koneksi.php';
 
-$query = "SELECT * FROM tb_login WHERE `username` = '$user' AND `password` = '$password';";
-
+$query = "SELECT * FROM tb_login WHERE `username` = '$user'";
 $result = mysqli_query($con, $query);
+$row = mysqli_fetch_assoc($result);
+$cekPass = password_verify($password, $row['password']);
 
-$row = mysqli_num_rows($result);
-
-if ($row > 0) {
-    $data = mysqli_fetch_assoc($result);
-
+if ($cekPass > 0) {
     $_SESSION['username'] = $user;
-    $_SESSION['leveluser'] = $data['leveluser'];
+    $_SESSION['leveluser'] = $row['leveluser'];
+    $_SESSION['idkaryawan'] = $row['idkaryawan'];
     header('Location: ../dashboard.php');
 } else {
     echo "<script>

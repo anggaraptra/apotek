@@ -1258,3 +1258,8 @@ h6 {
 }
 
 /* MY STYLE */
+@media print {
+  .print {
+    display: none !important;
+  }
+}

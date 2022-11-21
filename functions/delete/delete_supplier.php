@@ -10,7 +10,6 @@ if (!$hasil) {
     die("Gagal menghapus " . mysqli_error($con));
 } else {
     echo "<script>
-        alert('Data supplier berhasil di hapus');
         window.location='../../dashboard.php?page=supplier';
     </script>";
 }

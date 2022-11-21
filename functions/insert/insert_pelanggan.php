@@ -61,7 +61,6 @@ if ($fotoResep != "") {
         die("Query gagal dijalankan " . mysqli_errno($con) . " - " . mysqli_error($con));
     } else {
         echo "<script>
-            alert('Data berhasil ditambahkan');
             window.location='../../dashboard.php?page=pelanggan';
         </script>";
     }

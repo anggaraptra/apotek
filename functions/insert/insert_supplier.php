@@ -16,7 +16,6 @@ if (!$result) {
     die("Gagal memasukan data supplier! " . mysqli_error($con));
 } else {
     echo "<script>
-    alert('Data berhasil ditambahkan!');
     document.location.href = '../../dashboard.php?page=supplier';
     </script>";
 }

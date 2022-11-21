@@ -6,6 +6,6 @@ if (!isset($_SESSION['leveluser'])) {
 }
 require 'functions/koneksi.php';
 require 'templates/header.php';
-require 'templates/navbar.php';
+require 'templates/navsidebar.php';
 require 'halaman.php';
 require 'templates/footer.php';

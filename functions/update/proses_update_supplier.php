@@ -17,7 +17,6 @@ if (!$hasil) {
     die("Gagal mengedit data supplier, " . mysqli_error($con, $hasil));
 } else {
     echo "<script>
-        alert('Data supplier berhasil diupdate!');
         window.location='../../dashboard.php?page=supplier';
     </script>";
 }
