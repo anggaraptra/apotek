@@ -23,15 +23,15 @@
                         <th>Nama Karyawan</th>
                         <th>Tanggal Transaksi</th>
                         <th>Kategori Pelanggan</th>
-                        <th>Total Bayar</th>
-                        <th>Bayar</th>
-                        <th>Kembali</th>
+                        <th>Total Bayar (Rp)</th>
+                        <th>Bayar (Rp)</th>
+                        <th>Kembali (Rp)</th>
                         <th class="print">Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php
-                    $transaksi = mysqli_query($con, "SELECT * FROM tb_transaksi INNER JOIN tb_pelanggan USING(idpelanggan) INNER JOIN tb_karyawan USING(idkaryawan)");
+                    $transaksi = mysqli_query($con, "SELECT * FROM tb_transaksi INNER JOIN tb_pelanggan USING(idpelanggan) INNER JOIN tb_karyawan USING(idkaryawan) ORDER BY idtransaksi ASC");
                     $i = 1;
                     while ($trnksi = mysqli_fetch_assoc($transaksi)) { ?>
                         <tr>
@@ -40,9 +40,14 @@
                             <td><?= $trnksi['namakaryawan'] ?></td>
                             <td><?= $trnksi['tgltransaksi'] ?></td>
                             <td><?= $trnksi['kategoripelanggan'] ?></td>
-                            <td class="text-end"><?= $trnksi['totalbayar'] ?></td>
-                            <td class="text-end"><?= $trnksi['bayar'] ?></td>
-                            <td class="text-end"><?= $trnksi['kembali'] ?></td>
+                            <td class="text-end">
+                                <?= number_format($trnksi['totalbayar'], 0, ',', '.'); ?>
+                            <td class="text-end">
+                                <?= number_format($trnksi['bayar'], 0, ',', '.'); ?>
+                            </td>
+                            <td class="text-end">
+                                <?= number_format($trnksi['kembali'], 0, ',', '.'); ?>
+                            </td>
                             <td class='text-center print'>
                                 <a class='btn btn-warning' href='dashboard.php?page=detailtransaksi&idtransaksi=<?= $trnksi['idtransaksi'] ?>'>Detail</a>
                                 <a class='btn btn-danger tombolHapus' href='functions/delete/delete_transaksi.php?idtransaksi=<?= $trnksi['idtransaksi'] ?>'>Delete</a>
