@@ -76,6 +76,10 @@ if (@$_POST['simpanLangganan']) {
                                 <?php endwhile; ?>
                         </datalist>
                     </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
                     <td>
                         <input type="submit" class="btn btn-primary" name="simpanLangganan" value="Detail">
                     </td>
